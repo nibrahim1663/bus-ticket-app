@@ -4,7 +4,8 @@ import random
 from datetime import datetime
 from sqlQueries import *
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='https://bussystemstorageaccount.blob.core.windows.net/static-files')
 
 # Search Page
 @app.route('/', methods=["GET", "POST"])
