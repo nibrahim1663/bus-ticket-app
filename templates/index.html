@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <form action="{{ url_for('index') }}" method="POST" class="row g-3">
+            <div class="col-md-6">
+                <label for="from" class="form-label">From</label>
+                <select name="from" id="from" class="form-select">
+                    <option value="Waterloo">Waterloo</option>
+                    <option value="Kitchener">Kitchener</option>
+                    <option value="Toronto">Toronto</option>
+                    <option value="London">London</option>
+                    <option value="Cambridge">Cambridge</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="to" class="form-label">To</label>
+                <select name="to" id="to" class="form-select">
+                    <option value="Kitchener">Kitchener</option>
+                    <option value="Waterloo">Waterloo</option>
+                    <option value="Toronto">Toronto</option>
+                    <option value="Cambridge">Cambridge</option>
+                    <option value="London">London</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

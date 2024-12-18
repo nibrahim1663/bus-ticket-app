@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header text-center">
+    <h2>Update Your Booking Details</h2>
+  </div>
+  <div class="card-body">
+    <form action="{{ url_for('updatebook', bookid=busd[0][0]) }}" method="POST" class="row g-3">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Update Your Name</label>
+        <input type="text" id="name" name="name" value="{{ busd[1][1] }}" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="phno" class="form-label">Update Your Phone Number</label>
+        <input type="text" id="phno" name="phno" value="{{ busd[1][2] }}" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Update Your Email</label>
+        <input type="email" id="email" name="email" value="{{ busd[1][3] }}" class="form-control" required>
+      </div>
+      <div class="col-md-6">
+        <label for="passengers" class="form-label">Update Number of Passengers</label>
+        <select id="passengers" name="passengers" class="form-select" required>
+          {% for i in seats %}
+          <option value="{{ i }}">{{ i }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success">Update Booking</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
